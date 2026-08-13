@@ -1,0 +1,82 @@
+name: Deploy RipperTipper Staging
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "index.html"
+      - "app.js"
+      - "styles.css"
+      - "accuracy.css"
+      - "sports.json"
+      - "current_round.json"
+      - "nrl_current_round.json"
+      - ".nojekyll"
+      - ".github/workflows/deploy-pages.yml"
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: staging-pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate staging public boundary
+        run: |
+          python - <<'PY'
+          import json, re
+          from pathlib import Path
+
+          allowed_root = {'round_name','round_dates','status','updated_at','updated_label','accuracy_percent','accuracy_label','tips'}
+          allowed_tip = {'id','away_team','home_team','recommended_team','confidence_percent','start_time','venue','reason','kickoff_epoch_millis','result_winner','result_label'}
+          forbidden = {'sources','providers','provider_list','model_count','baseline_model_home_probability','context_home_probability','weights','coefficients','features','metrics','calibration','manual_signals','raw_data'}
+          leak = re.compile(r'\b\d+\s+(?:of|/)\s*\d+\s+(?:tracked\s+)?(?:models?|providers?|sources?)\b|\b(?:models?|providers?)\s+favour\b', re.I)
+
+          for filename in ('current_round.json','nrl_current_round.json'):
+              payload = json.loads(Path(filename).read_text())
+              extra = set(payload) - allowed_root
+              if extra or forbidden & set(payload):
+                  raise SystemExit(f'{filename}: unsafe root fields {sorted(extra | (forbidden & set(payload)))}')
+              tips = payload.get('tips')
+              if not isinstance(tips, list) or not tips:
+                  raise SystemExit(f'{filename}: tips missing')
+              acc = payload.get('accuracy_percent')
+              if acc is not None and (not isinstance(acc, int) or not 0 <= acc <= 100):
+                  raise SystemExit(f'{filename}: invalid accuracy')
+              for tip in tips:
+                  unsafe = (set(tip) - allowed_tip) | (forbidden & set(tip))
+                  if unsafe:
+                      raise SystemExit(f'{filename}: unsafe tip fields {sorted(unsafe)}')
+                  if leak.search(str(tip.get('reason',''))):
+                      raise SystemExit(f'{filename}: semantic model/provider leakage in public reason')
+
+          catalogue = json.loads(Path('sports.json').read_text())
+          if catalogue.get('default_sport') != 'afl':
+              raise SystemExit('AFL must remain staging default sport')
+          ids = [s.get('id') for s in catalogue.get('sports', [])]
+          if ids != ['afl','nrl']:
+              raise SystemExit('Unexpected staging sport catalogue')
+          print('Validated AFL + NRL staging public boundary')
+          PY
+
+      - uses: actions/configure-pages@v5
+        with:
+          enablement: true
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+      - name: Deploy staging
+        id: deployment
+        uses: actions/deploy-pages@v4
