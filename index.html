@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="theme-color" content="#15231d">
+  <meta name="description" content="RipperTipper staging — simple sports tipping picks.">
+  <title>RipperTipper — Staging</title>
+  <link rel="icon" type="image/png" href="https://rippertipper.com.au/assets/ripper-tipper-logo.png">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="accuracy.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <div class="hero__inner shell">
+      <div class="topline">
+        <a class="brand" href="./" aria-label="RipperTipper staging home">
+          <img class="brand__mark" src="https://rippertipper.com.au/assets/ripper-tipper-logo.png" alt="" width="54" height="54">
+          <span class="brand__name">RipperTipper</span>
+        </a>
+        <span class="staging-badge">Staging</span>
+      </div>
+      <div class="sport-picker">
+        <label for="sport-select">Sport</label>
+        <select id="sport-select" aria-label="Choose sport">
+          <option value="afl">AFL</option>
+          <option value="nrl">NRL</option>
+        </select>
+      </div>
+      <div class="hero__copy">
+        <p class="eyebrow" id="round-kicker">Next up</p>
+        <h1>Here’s who<br>to pick.</h1>
+        <p class="hero__date" id="round-dates">Loading the current round…</p>
+      </div>
+    </div>
+  </header>
+
+  <main class="shell main-content">
+    <section class="round-bar" aria-labelledby="round-summary-heading">
+      <div><p class="eyebrow eyebrow--forest" id="round-summary-heading">Getting picks ready</p><p class="round-bar__status" id="data-status" role="status">Checking for the latest update…</p></div>
+      <button class="refresh-button" id="refresh-button" type="button"><span aria-hidden="true">↻</span> Refresh</button>
+    </section>
+
+    <section class="accuracy-card" aria-labelledby="accuracy-title">
+      <div><p class="micro-label accuracy-card__kicker" id="accuracy-title">Model accuracy</p><p class="accuracy-card__value" id="accuracy-value">Tracking</p></div>
+      <p class="accuracy-card__detail" id="accuracy-label">Loading verified performance…</p>
+    </section>
+
+    <section class="notice notice--stale" id="stale-notice" hidden><span class="notice__icon">!</span><div><strong>These picks may be out of date</strong><p>Check again before the match starts.</p></div></section>
+    <section class="state-card" id="loading-state"><div class="loader"></div><div><strong>Loading picks</strong><p>Checking the latest RipperTipper round.</p></div></section>
+    <section class="state-card state-card--error" id="error-state" hidden><div class="state-card__badge">!</div><div><strong>Picks are unavailable right now</strong><p id="error-message"></p><button class="text-button" id="retry-button" type="button">Try again</button></div></section>
+    <section class="matches" id="matches" hidden></section>
+
+    <template id="match-template">
+      <article class="match-card">
+        <div class="match-card__meta"><p><span class="match-time"></span><span> · </span><span class="match-venue"></span></p><span class="match-number"></span></div>
+        <div class="match-card__pick"><div><p class="micro-label">Our pick</p><h2 class="recommended-team"></h2></div><div class="confidence-pill"><strong class="confidence-percent"></strong><span class="confidence-label"></span></div></div>
+        <div class="match-card__teams"><span class="away-team"></span><span class="versus">vs</span><span class="home-team"></span></div>
+        <details class="reason"><summary><span>Why this pick</span><span class="reason__toggle"></span></summary><p class="reason-text"></p></details>
+      </article>
+    </template>
+  </main>
+
+  <footer><div class="shell footer__inner"><div><strong>RipperTipper</strong><p>Your tips. Sorted.</p></div><p class="footer__note">Tips are guidance only. Match details can change. Independent and not affiliated with or endorsed by any league, club or governing body.</p></div></footer>
+</body>
+</html>
