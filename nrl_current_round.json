@@ -1,0 +1,19 @@
+{
+  "round_name": "Round 24",
+  "round_dates": "13–16 August 2026 · Adelaide time",
+  "status": "NRL staging model · experimental",
+  "updated_at": "2026-08-13T09:25:00Z",
+  "updated_label": "Staging preview",
+  "accuracy_percent": null,
+  "accuracy_label": "NRL accuracy tracking starts after staging validation",
+  "tips": [
+    {"id":24001,"away_team":"Roosters","home_team":"Panthers","recommended_team":"Panthers","confidence_percent":58,"start_time":"Thu 7:20 pm","venue":"CommBank Stadium","reason":"RipperTipper currently rates the Panthers as the stronger pick after current form, availability and matchup factors.","kickoff_epoch_millis":1786614600000},
+    {"id":24002,"away_team":"Dolphins","home_team":"Sea Eagles","recommended_team":"Dolphins","confidence_percent":62,"start_time":"Fri 5:30 pm","venue":"4 Pines Park","reason":"RipperTipper currently rates the Dolphins as the stronger pick after current form and matchup factors.","kickoff_epoch_millis":1786694400000},
+    {"id":24003,"away_team":"Rabbitohs","home_team":"Bulldogs","recommended_team":"Rabbitohs","confidence_percent":58,"start_time":"Fri 7:30 pm","venue":"Accor Stadium","reason":"RipperTipper currently gives the Rabbitohs a narrow edge after current form and matchup factors.","kickoff_epoch_millis":1786701600000},
+    {"id":24004,"away_team":"Raiders","home_team":"Sharks","recommended_team":"Sharks","confidence_percent":62,"start_time":"Sat 2:30 pm","venue":"Ocean Protect Stadium","reason":"RipperTipper currently rates the Sharks as the stronger pick after current form, availability and matchup factors.","kickoff_epoch_millis":1786770000000},
+    {"id":24005,"away_team":"Cowboys","home_team":"Eels","recommended_team":"Cowboys","confidence_percent":64,"start_time":"Sat 5:00 pm","venue":"CommBank Stadium","reason":"RipperTipper currently rates the Cowboys as the stronger pick after current form and matchup factors.","kickoff_epoch_millis":1786779000000},
+    {"id":24006,"away_team":"Warriors","home_team":"Broncos","recommended_team":"Warriors","confidence_percent":70,"start_time":"Sat 7:05 pm","venue":"Suncorp Stadium","reason":"RipperTipper currently rates the Warriors as the stronger pick after current form and matchup factors.","kickoff_epoch_millis":1786786500000},
+    {"id":24007,"away_team":"Titans","home_team":"Knights","recommended_team":"Knights","confidence_percent":68,"start_time":"Sun 1:30 pm","venue":"McDonald Jones Stadium","reason":"RipperTipper currently rates the Knights as the stronger pick after current form and matchup factors.","kickoff_epoch_millis":1786852800000},
+    {"id":24008,"away_team":"Dragons","home_team":"Wests Tigers","recommended_team":"Wests Tigers","confidence_percent":56,"start_time":"Sun 3:35 pm","venue":"CommBank Stadium","reason":"RipperTipper currently gives the Wests Tigers a slight edge in this matchup.","kickoff_epoch_millis":1786860300000}
+  ]
+}
