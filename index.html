@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#15231d">
   <meta name="description" content="RipperTipper staging — simple sports tipping picks.">
   <title>RipperTipper — Staging</title>
-  <link rel="icon" type="image/png" href="https://rippertipper.com.au/assets/ripper-tipper-logo.png">
+  <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/langzonedev/RipperTipper-Web/main/assets/ripper-tipper-logo.png">
   <link rel="stylesheet" href="styles.css">
   <link rel="stylesheet" href="accuracy.css">
   <script src="app.js" defer></script>
@@ -17,18 +17,16 @@
     <div class="hero__inner shell">
       <div class="topline">
         <a class="brand" href="./" aria-label="RipperTipper staging home">
-          <img class="brand__mark" src="https://rippertipper.com.au/assets/ripper-tipper-logo.png" alt="" width="54" height="54">
+          <img class="brand__mark" src="https://raw.githubusercontent.com/langzonedev/RipperTipper-Web/main/assets/ripper-tipper-logo.png" alt="" width="54" height="54">
           <span class="brand__name">RipperTipper</span>
         </a>
         <span class="staging-badge">Staging</span>
       </div>
-      <div class="sport-picker">
-        <label for="sport-select">Sport</label>
-        <select id="sport-select" aria-label="Choose sport">
-          <option value="afl">AFL</option>
-          <option value="nrl">NRL</option>
-        </select>
-      </div>
+      <fieldset class="sport-picker" aria-label="Choose sport">
+        <legend>Sport</legend>
+        <button class="sport-option is-selected" type="button" data-sport="afl" aria-pressed="true">AFL</button>
+        <button class="sport-option" type="button" data-sport="nrl" aria-pressed="false">NRL</button>
+      </fieldset>
       <div class="hero__copy">
         <p class="eyebrow" id="round-kicker">Next up</p>
         <h1>Here’s who<br>to pick.</h1>
@@ -49,7 +47,7 @@
     </section>
 
     <section class="notice notice--stale" id="stale-notice" hidden><span class="notice__icon">!</span><div><strong>These picks may be out of date</strong><p>Check again before the match starts.</p></div></section>
-    <section class="state-card" id="loading-state"><div class="loader"></div><div><strong>Loading picks</strong><p>Checking the latest RipperTipper round.</p></div></section>
+    <section class="state-card" id="loading-state"><div class="loader"></div><div><strong>Loading picks</strong><p>Checking the latest round.</p></div></section>
     <section class="state-card state-card--error" id="error-state" hidden><div class="state-card__badge">!</div><div><strong>Picks are unavailable right now</strong><p id="error-message"></p><button class="text-button" id="retry-button" type="button">Try again</button></div></section>
     <section class="matches" id="matches" hidden></section>
 
