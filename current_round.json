@@ -2,8 +2,8 @@
   "round_name": "Round 23",
   "round_dates": "14\u201316 August 2026 \u00b7 Adelaide time",
   "status": "RipperTipper AFL prediction model",
-  "updated_at": "2026-08-13T11:22:19.054513+00:00",
-  "updated_label": "Updated 13 August, 08:52 pm",
+  "updated_at": "2026-08-13T11:36:30.050744+00:00",
+  "updated_label": "Updated 13 August, 09:06 pm",
   "accuracy_percent": 74,
   "accuracy_label": "45 of 61 completed tips correct \u00b7 through Round 22",
   "tips": [
@@ -15,7 +15,7 @@
       "confidence_percent": 75,
       "start_time": "Fri 7:40 pm",
       "venue": "Optus Stadium",
-      "reason": "Fremantle has the stronger overall form and matchup profile.",
+      "reason": "Fremantle has the cleaner current availability profile..",
       "kickoff_epoch_millis": 1786702200000
     },
     {
@@ -26,7 +26,7 @@
       "confidence_percent": 89,
       "start_time": "Sat 12:05 pm",
       "venue": "MCG",
-      "reason": "St Kilda has the stronger overall form and matchup profile.",
+      "reason": "St Kilda's recent scoring margins are materially stronger..",
       "kickoff_epoch_millis": 1786761300000
     },
     {
@@ -37,7 +37,7 @@
       "confidence_percent": 88,
       "start_time": "Sat 3:15 pm",
       "venue": "Marvel Stadium",
-      "reason": "Geelong has the stronger overall form and matchup profile.",
+      "reason": "Geelong has the stronger recent five-game record..",
       "kickoff_epoch_millis": 1786772700000
     },
     {
@@ -45,10 +45,10 @@
       "away_team": "Gold Coast",
       "home_team": "Brisbane Lions",
       "recommended_team": "Brisbane Lions",
-      "confidence_percent": 81,
+      "confidence_percent": 82,
       "start_time": "Sat 3:45 pm",
       "venue": "Gabba",
-      "reason": "Brisbane Lions has the stronger overall form and matchup profile.",
+      "reason": "Brisbane Lions has the stronger recent five-game record..",
       "kickoff_epoch_millis": 1786774500000
     },
     {
@@ -59,7 +59,7 @@
       "confidence_percent": 67,
       "start_time": "Sat 7:10 pm",
       "venue": "MCG",
-      "reason": "Hawthorn rates better on current form, strength and matchup factors.",
+      "reason": "Hawthorn has the cleaner current availability profile..",
       "kickoff_epoch_millis": 1786786800000
     },
     {
@@ -70,7 +70,7 @@
       "confidence_percent": 82,
       "start_time": "Sat 7:40 pm",
       "venue": "Adelaide Oval",
-      "reason": "Melbourne has the stronger overall form and matchup profile.",
+      "reason": "Melbourne has the stronger recent five-game record..",
       "kickoff_epoch_millis": 1786788600000
     },
     {
@@ -81,7 +81,7 @@
       "confidence_percent": 83,
       "start_time": "Sun 1:10 pm",
       "venue": "ENGIE Stadium",
-      "reason": "Greater Western Sydney has the stronger overall form and matchup profile.",
+      "reason": "Greater Western Sydney has the stronger recent five-game record..",
       "kickoff_epoch_millis": 1786851600000
     },
     {
@@ -92,7 +92,7 @@
       "confidence_percent": 59,
       "start_time": "Sun 2:45 pm",
       "venue": "Marvel Stadium",
-      "reason": "Carlton rates better on current form, strength and matchup factors.",
+      "reason": "Carlton hold a slight results-based team-strength edge.",
       "kickoff_epoch_millis": 1786857300000
     },
     {
@@ -103,7 +103,7 @@
       "confidence_percent": 95,
       "start_time": "Sun 4:10 pm",
       "venue": "MCG",
-      "reason": "Sydney has the stronger overall form and matchup profile.",
+      "reason": "Sydney has the stronger recent five-game record..",
       "kickoff_epoch_millis": 1786862400000
     }
   ]
