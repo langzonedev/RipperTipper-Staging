@@ -1,0 +1,7 @@
+{
+  "default_sport": "afl",
+  "sports": [
+    {"id": "afl", "name": "AFL", "data_url": "current_round.json"},
+    {"id": "nrl", "name": "NRL", "data_url": "nrl_current_round.json"}
+  ]
+}
