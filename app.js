@@ -7,15 +7,17 @@
   const STALE_AFTER_MS = 18 * 60 * 60 * 1000;
   const $ = (s) => document.querySelector(s);
   const el = {
-    sport: $("#sport-select"), roundKicker: $("#round-kicker"), roundDates: $("#round-dates"),
+    sportOptions: [...document.querySelectorAll(".sport-option")],
+    roundKicker: $("#round-kicker"), roundDates: $("#round-dates"),
     roundSummary: $("#round-summary-heading"), dataStatus: $("#data-status"), accuracyValue: $("#accuracy-value"),
     accuracyLabel: $("#accuracy-label"), stale: $("#stale-notice"), loading: $("#loading-state"), error: $("#error-state"),
     errorMessage: $("#error-message"), matches: $("#matches"), template: $("#match-template"), refresh: $("#refresh-button"), retry: $("#retry-button"),
   };
+  let currentSportId = "afl";
   let current = null;
   let inFlight = false;
   const safe = (v, f = "") => typeof v === "string" && v.trim() ? v.trim() : f;
-  const selectedSport = () => SPORTS[el.sport.value] || SPORTS.afl;
+  const selectedSport = () => SPORTS[currentSportId] || SPORTS.afl;
   const parseTime = (v) => { const n = Date.parse(v); return Number.isFinite(n) ? n : null; };
   function freshness(ts) {
     if (!ts) return "Update time unavailable";
@@ -46,8 +48,15 @@
     card.querySelector(".confidence-pill").dataset.level = c.level;
     card.querySelector(".away-team").textContent = safe(tip.away_team, "Away");
     card.querySelector(".home-team").textContent = safe(tip.home_team, "Home");
-    card.querySelector(".reason-text").textContent = safe(tip.reason, "RipperTipper currently rates this as the stronger pick.");
+    card.querySelector(".reason-text").textContent = safe(tip.reason, "Slight edge on current form and matchup.");
     return card;
+  }
+  function updateSportControl() {
+    el.sportOptions.forEach((button) => {
+      const selected = button.dataset.sport === currentSportId;
+      button.classList.toggle("is-selected", selected);
+      button.setAttribute("aria-pressed", String(selected));
+    });
   }
   function render(snapshot) {
     current = snapshot;
@@ -80,7 +89,15 @@
     } catch (e) { showError(e); }
     finally { inFlight = false; el.refresh.disabled = false; }
   }
-  el.sport.addEventListener("change", load); el.refresh.addEventListener("click", load); el.retry.addEventListener("click", load);
+  el.sportOptions.forEach((button) => button.addEventListener("click", () => {
+    const next = button.dataset.sport;
+    if (!SPORTS[next] || next === currentSportId) return;
+    currentSportId = next;
+    updateSportControl();
+    load();
+  }));
+  el.refresh.addEventListener("click", load); el.retry.addEventListener("click", load);
   setInterval(() => current && render(current), 60000);
+  updateSportControl();
   load();
 })();
