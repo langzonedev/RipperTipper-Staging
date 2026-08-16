@@ -2,22 +2,11 @@
   "round_name": "Round 24",
   "round_dates": "13\u201316 August 2026 \u00b7 Adelaide time",
   "status": "NRL staging model \u00b7 experimental",
-  "updated_at": "2026-08-16T05:48:17.305105+00:00",
+  "updated_at": "2026-08-16T07:04:58.919505+00:00",
   "updated_label": "Staging model generated automatically",
   "accuracy_percent": null,
   "accuracy_label": "NRL accuracy tracking starts after staging validation",
   "tips": [
-    {
-      "id": 24007,
-      "away_team": "Titans",
-      "home_team": "Knights",
-      "recommended_team": "Knights",
-      "confidence_percent": 71,
-      "start_time": "Sun 1:30 pm",
-      "venue": "McDonald Jones Stadium",
-      "reason": "Knights have the stronger season record.",
-      "kickoff_epoch_millis": 1786852800000
-    },
     {
       "id": 24008,
       "away_team": "Dragons",
