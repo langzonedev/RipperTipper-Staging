@@ -2,22 +2,11 @@
   "round_name": "Round 25",
   "round_dates": "20\u201323 August 2026 \u00b7 Adelaide time",
   "status": "NRL staging model \u00b7 experimental",
-  "updated_at": "2026-08-21T11:46:29.461943+00:00",
+  "updated_at": "2026-08-21T13:15:53.832150+00:00",
   "updated_label": "Staging model generated automatically",
   "accuracy_percent": null,
   "accuracy_label": "NRL accuracy tracking starts after staging validation",
   "tips": [
-    {
-      "id": 25003,
-      "away_team": "Eels",
-      "home_team": "Dolphins",
-      "recommended_team": "Dolphins",
-      "confidence_percent": 76,
-      "start_time": "Fri 7:30 pm",
-      "venue": "Suncorp Stadium",
-      "reason": "Dolphins have the stronger season record.",
-      "kickoff_epoch_millis": 1787306400000
-    },
     {
       "id": 25004,
       "away_team": "Sea Eagles",
