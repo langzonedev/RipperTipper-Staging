@@ -2,22 +2,11 @@
   "round_name": "Round 25",
   "round_dates": "20\u201323 August 2026 \u00b7 Adelaide time",
   "status": "NRL staging model \u00b7 experimental",
-  "updated_at": "2026-08-22T07:49:58.533547+00:00",
+  "updated_at": "2026-08-22T08:51:51.769222+00:00",
   "updated_label": "Staging model generated automatically",
   "accuracy_percent": null,
   "accuracy_label": "NRL accuracy tracking starts after staging validation",
   "tips": [
-    {
-      "id": 25004,
-      "away_team": "Sea Eagles",
-      "home_team": "Knights",
-      "recommended_team": "Knights",
-      "confidence_percent": 56,
-      "start_time": "Sat 2:30 pm",
-      "venue": "McDonald Jones Stadium",
-      "reason": "Knights have the stronger season record.",
-      "kickoff_epoch_millis": 1787374800000
-    },
     {
       "id": 25005,
       "away_team": "Warriors",
