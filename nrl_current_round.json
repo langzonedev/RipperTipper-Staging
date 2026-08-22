@@ -2,22 +2,11 @@
   "round_name": "Round 25",
   "round_dates": "20\u201323 August 2026 \u00b7 Adelaide time",
   "status": "NRL staging model \u00b7 experimental",
-  "updated_at": "2026-08-22T11:41:05.934344+00:00",
+  "updated_at": "2026-08-22T13:05:43.076394+00:00",
   "updated_label": "Staging model generated automatically",
   "accuracy_percent": null,
   "accuracy_label": "NRL accuracy tracking starts after staging validation",
   "tips": [
-    {
-      "id": 25006,
-      "away_team": "Bulldogs",
-      "home_team": "Dragons",
-      "recommended_team": "Bulldogs",
-      "confidence_percent": 64,
-      "start_time": "Sat 7:05 pm",
-      "venue": "Allianz Stadium",
-      "reason": "Bulldogs have the stronger season record.",
-      "kickoff_epoch_millis": 1787391300000
-    },
     {
       "id": 25007,
       "away_team": "Sharks",
